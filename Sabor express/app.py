@@ -14,17 +14,26 @@ def finalizar_app():
     os.system('clear') # limpa a tela
     print('Encerrando o aplicativo. Até logo!\n')
 
-def escolher_opcao():
-    opcao_escolhida = int(input('Escolha a opção desejada:'))
+def opcao_invalida():
+    os.system('clear') # limpa a tela
+    print('Opção inválida. Tente novamente.\n')
 
-    if opcao_escolhida == 1:
-        print('Cadastrar restaurante')
-    elif opcao_escolhida == 2:
-        print('Listar restaurantes')
-    elif opcao_escolhida == 3:
-        print('Ativar/Desativar restaurante')
-    else:
-        finalizar_app()
+def escolher_opcao():
+    try:
+        opcao_escolhida = int(input('Escolha a opção desejada:'))
+
+        if opcao_escolhida == 1:
+            print('Cadastrar restaurante')
+        elif opcao_escolhida == 2:
+            print('Listar restaurantes')
+        elif opcao_escolhida == 3:
+            print('Ativar/Desativar restaurante')
+            finalizar_app
+        else:
+            opcao_invalida()
+    except:
+        opcao_invalida()
+
 
 def main():
     exibir_nome_do_programa()
